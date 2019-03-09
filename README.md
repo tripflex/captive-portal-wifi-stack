@@ -3,18 +3,18 @@
 [![Gitter](https://badges.gitter.im/cesanta/mongoose-os.svg)](https://gitter.im/cesanta/mongoose-os?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 - [Mongoose OS Captive Portal WiFi Stack](#mongoose-os-captive-portal-wifi-stack)
-  - [Captive Portal Stack](#captive-portal-stack)
   - [Author](#author)
+  - [Demo Application](#demo-application)
   - [Installation/Usage](#installationusage)
     - [Use specific branch of library](#use-specific-branch-of-library)
   - [Included Libraries](#included-libraries)
-    - [Captive Portal](#captive-portal)
+    - [Captive Portal `captive-portal`](#captive-portal-captive-portal)
       - [Features](#features)
-    - [WiFi Setup](#wifi-setup)
+    - [WiFi Setup `captive-portal-wifi-setup`](#wifi-setup-captive-portal-wifi-setup)
       - [Features](#features-1)
-    - [WiFi RPC](#wifi-rpc)
+    - [WiFi RPC `captive-portal-wifi-rpc`](#wifi-rpc-captive-portal-wifi-rpc)
       - [Features](#features-2)
-    - [Captive Portal Web UI](#captive-portal-web-ui)
+    - [Captive Portal Web UI `captive-portal-wifi-web`](#captive-portal-web-ui-captive-portal-wifi-web)
       - [Features](#features-3)
   - [Changelog](#changelog)
   - [License](#license)
@@ -27,11 +27,12 @@ This library is a complete remake of my original [WiFi Captive Portal](https://g
 
 ![OSX Captive Portal](https://raw.githubusercontent.com/tripflex/captive-portal-wifi-web/master/osx-portal.gif)
 
-## Captive Portal Stack
-This is the **WiFi Setup Web UI** library from the [Captive Portal WiFi Full Stack](https://github.com/tripflex/captive-portal-wifi-stack), a full stack (frontend web ui & backend handling) library for implementing a full Captive Portal WiFi with Mongoose OS
-
 ## Author
 Myles McNamara ( https://smyl.es )
+
+## Demo Application
+If you want to test out the full stack solution, I have created a test/demo application you can use to flash to your device and play around with it:
+[https://github.com/tripflex/captive-portal-wifi-stack-demo](https://github.com/tripflex/captive-portal-wifi-stack-demo)
 
 ## Installation/Usage
 Add this lib your `mos.yml` file under `libs:`
@@ -54,7 +55,7 @@ Below is a list of all the libraries included in this one.  There is **NO** code
 
 **It's STRONGLY recommended** that you read the README for each individual library, to see the available config options, and features -- __as this may not be the latest list of features__!
 
-### [Captive Portal](https://github.com/tripflex/captive-portal)
+### [Captive Portal](https://github.com/tripflex/captive-portal) `captive-portal`
 
 This library handles all the DNS, and redirection required for Captive Portal prompts, etc.  
 
@@ -66,7 +67,7 @@ See the library [**FULL README**](https://github.com/tripflex/captive-portal) fo
 - Checks device Accepts header to make sure that it supports GZIP before sending/using GZIP files
 - Support for Samsung Android devices that do not follow Captive Portal 302 redirect standards
 
-### [WiFi Setup](https://github.com/tripflex/captive-portal-wifi-setup)
+### [WiFi Setup](https://github.com/tripflex/captive-portal-wifi-setup) `captive-portal-wifi-setup`
 
 This library is for testing, saving, and setting up Mongoose OS device's WiFi.  The main feature of this library is the ability to test WiFi credentials, and then save or update them in the configuration.
 
@@ -83,7 +84,7 @@ See the library [**FULL README**](https://github.com/tripflex/captive-portal-wif
 - Callback for failed/successful test for use in `C` or `mJS`
 - Disable Captive Portal setting after successful test
 
-### [WiFi RPC](https://github.com/tripflex/captive-portal-wifi-rpc)
+### [WiFi RPC](https://github.com/tripflex/captive-portal-wifi-rpc) `captive-portal-wifi-rpc`
 
 This library adds RPC endpoints for Mongoose OS to Scan for WiFi networks (same as `rpc-service-wifi` lib), and test WiFi credentials (from the `captive-portal-wifi-setup` lib).
 
@@ -94,8 +95,7 @@ See the library [**FULL README**](https://github.com/tripflex/captive-portal-wif
 - RPC Endpoint to Test WiFi connection and credentials
 - Disable RPC endpoints after successful wifi test
 
-
-### [Captive Portal Web UI](https://github.com/tripflex/captive-portal-wifi-web)
+### [Captive Portal Web UI](https://github.com/tripflex/captive-portal-wifi-web) `captive-portal-wifi-web`
 
 This library is **only** the Captive Portal WiFi Web UI.  It does not include any C or mJS files, and is specifically for use in the Captive Portal WiFi Stack.  This library was built with minimal space in mind, and as such, it **DOES NOT** include any libs like `axios`, `jquery` or anything else that would add unecessary bloat to your already limited space on embedded device!  **Completely vanilla JavaScript!**
 
