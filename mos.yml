@@ -1,0 +1,23 @@
+author: Myles McNamara <myles@smyl.es>
+type: lib
+description: Captive Portal WiFi Setup Full Stack (RPC, Web UI, Captive Portal)
+version: 1.0.0
+# platforms: [ cc3200, cc3220, esp32, esp8266 ]
+
+libs:
+  - origin: https://github.com/tripflex/captive-portal
+  - origin: https://github.com/tripflex/captive-portal-wifi-web
+  - origin: https://github.com/tripflex/captive-portal-wifi-rpc
+  - origin: https://github.com/tripflex/captive-portal-wifi-setup
+
+tags:
+  - wifi
+  - setup
+  - js
+  - portal
+  - ui
+  - web
+  - html
+  - css
+
+manifest_version: 2017-09-29
